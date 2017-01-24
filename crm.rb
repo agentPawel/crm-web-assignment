@@ -4,5 +4,5 @@
 require 'sinatra'
 
 get '/' do
-  'Main Menu'
-end 
+  erb :index
+end
