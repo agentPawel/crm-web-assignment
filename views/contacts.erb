@@ -1,0 +1,9 @@
+<h1>All Contacts</h1>
+
+<ul>
+<% Contact.all.each do |contact| %>
+  <li><%= contact.first_name %> <%= contact.last_name %> <%= contact.email %></li>
+<% end %>
+</ul>
+
+<h5>Add a new contact <a href=/new_contact> PRESS HERE</a></h5>
