@@ -7,7 +7,7 @@
   list-style: none;
 }
 
-header {
+.header {
   background-color: black;
   color:white;
   text-align: center;
@@ -15,7 +15,7 @@ header {
   padding: 15px 0;
 }
 
-nav li{
+.nav_list_link {
   background-color: grey;
   color: white;
   text-align: center;
@@ -25,17 +25,17 @@ nav li{
   margin: 2px 0;
 }
 
-main {
+.main_content {
   width: 90%;
   margin-left: 5%;
 }
 
-main span {
+.underline_count {
   font-weight: bold;
   border-bottom: 2px solid teal;
 }
 
-main p {
+.number_of_contacts {
   background: red;
   color: black;
   padding: 10px 0 10px 20px;
@@ -43,8 +43,7 @@ main p {
   font-size: 18px;
 }
 
-main li {
-  /*width: 100%;*/
+.list_item {
   background: teal;
   color: black;
   padding: 10px 0 10px 20px;
@@ -53,13 +52,19 @@ main li {
   font-weight: bold;
 }
 
-main li a {
+.little_link {
   font-size: 10px;
+  text-decoration: underline;
+  color: blue;
 }
 
-footer {
+.footer {
   background-color: black;
   color: white;
   text-align: center;
   padding: 10px 0;
+}
+
+.first_name {
+  color: tomato;
 }
