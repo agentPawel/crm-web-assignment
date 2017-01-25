@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header {
+  background-color: black;
+  color:white;
+  text-align: center;
+  font-size: 24px;
+  padding: 15px 0;
+}
+
+nav li{
+  background-color: grey;
+  color: white;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  margin: 2px 0;
+}
+
+main {
+  width: 90%;
+  margin-left: 5%;
+}
+
+main span {
+  font-weight: bold;
+  border-bottom: 2px solid teal;
+}
+
+main p {
+  background: red;
+  color: black;
+  padding: 10px 0 10px 20px;
+  margin: 5px auto;
+  font-size: 18px;
+}
+
+main li {
+  /*width: 100%;*/
+  background: teal;
+  color: black;
+  padding: 10px 0 10px 20px;
+  margin: 5px auto;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+main li a {
+  font-size: 10px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
