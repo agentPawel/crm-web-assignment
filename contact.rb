@@ -1,9 +1,3 @@
-# Copy your entire Contact class from the old crm assignment here.
-# Then, run the following at the command line:
-#
-#   ruby test/contact_test.rb
-#
-# If your implementation of the Contact class is 'right', then you should see that all tests pass!
 class Contact
 
   attr_reader :id
@@ -70,6 +64,6 @@ class Contact
   end
 
   def delete
-    @@contacts.delete(self)
+    @@contacts.delete_if { |contact| contact.id == self.id }
   end
 end
