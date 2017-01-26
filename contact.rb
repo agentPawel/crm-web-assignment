@@ -1,69 +1,20 @@
-class Contact
+gem 'activerecord', '=4.2.7'
+require 'active_record'
+require 'mini_record'
 
-  attr_reader :id
-  attr_accessor :first_name, :last_name, :email, :note
+ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'crm-web.sqlite3')
 
-  @@contacts = []
-  @@id = 1
+class Contact < ActiveRecord::Base
 
-  def initialize (first_name, last_name, email, note)
-    @first_name = first_name
-    @last_name = last_name
-    @email = email
-    @note = note
-    @id = @@id
-    @@id += 1
-  end
-
-  def self.create (first_name, last_name, email, note)
-    new_contact = Contact.new(first_name, last_name, email, note)
-    @@contacts << new_contact
-    new_contact
-  end
-
-  def self.all
-    @@contacts
-  end
-
-  def self.find(id)
-    @@contacts.each do |contact|
-      return contact if contact.id == id
-    end
-    return nil
-  end
-
-  def update(attribute_to_update, new_value)
-    case attribute_to_update
-    when "first_name"
-      self.first_name = new_value
-    when "last_name"
-      self.last_name = new_value
-    when "email"
-      self.email = new_value
-    when "note"
-      self.note = new_value
-    end
-  end
-
-  def self.find_by(attribute_to_search, attribute_value)
-    @@contacts.each do |contact|
-    return contact if attribute_to_search == "first_name" && contact.first_name == attribute_value
-    return contact if attribute_to_search == "last_name" && contact.last_name == attribute_value
-    return contact if attribute_to_search == "email" && contact.email == attribute_value
-    return contact if attribute_to_search == "note" && contact.note == attribute_value
-    end
-    return nil
-  end
-
-  def self.delete_all
-    @@contacts = []
-  end
+  field :first_name, as: :string
+  field :last_name,  as: :string
+  field :email,      as: :string
+  field :note,       as: :text
 
   def full_name
     return "#{first_name} #{last_name}"
   end
 
-  def delete
-    @@contacts.delete_if { |contact| contact.id == self.id }
-  end
 end
+
+Contact.auto_upgrade!
