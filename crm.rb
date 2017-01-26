@@ -69,7 +69,7 @@ end
 delete '/contacts/:id' do
   @contact = Contact.find(params[:id].to_i)
   if @contact
-    @contact.delete
+    @contact.destroy
     redirect to('/contacts')
   else
     raise Sinatra::NotFound
