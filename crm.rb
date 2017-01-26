@@ -46,14 +46,20 @@ post '/contacts' do
   redirect to('/contacts')
 end
 
+
+# user = User.find_by(name: 'David')
+# user.name = 'Dave'
+# user.save
+
 put '/contacts/:id' do
   @contact = Contact.find(params[:id].to_i)
   if @contact
-    @contact.first_name = params[:first_name]
-    @contact.last_name = params[:last_name]
-    @contact.email = params[:email]
-    @contact.note = params[:note]
-
+    @contact.update(
+    first_name: params[:first_name],
+    last_name: params[:last_name],
+    email: params[:email],
+    note: params[:note]
+    )
     redirect to('/contacts')
   else
     raise Sinatra::NotFound
